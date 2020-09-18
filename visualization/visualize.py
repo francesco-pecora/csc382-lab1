@@ -18,8 +18,10 @@ class Visualizer:
             print('Input Size: ', self.inputs[i])
             print('Insertion CPU Time: ', insertionTimes[i], 'x 10^(-2) seconds')
             print('Insertion Steps: ', insertionSteps[i])
+            print('C constant: ', float(insertionSteps[i]) / (self.inputs[i] ** 2.0))
             print('Merge CPU Time: ', mergeTimes[i], 'x 10^(-2) seconds')
             print('Merge Steps: ', mergeSteps[i])
+            print('C constant: ', float(mergeSteps[i]) / (self.inputs[i] ** 2.0))
             print()
 
     def exponentialFit(self, x, a, b, c):
