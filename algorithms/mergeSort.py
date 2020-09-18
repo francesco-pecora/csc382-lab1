@@ -1,6 +1,6 @@
 import random
 
-def mergesort(arr, numSteps):
+def mergeSort(arr, numSteps):
     '''
     implementation of merge sort with the
     addition of counting the number of operations
@@ -29,8 +29,8 @@ def mergesort(arr, numSteps):
     # counting the assignment of p
     numSteps += 1
 
-    m1, _ = mergesort(arr[:p], numSteps)
-    m2, _ = mergesort(arr[p:], numSteps)
+    m1, _ = mergeSort(arr[:p], numSteps)
+    m2, _ = mergeSort(arr[p:], numSteps)
 
     # counting the assignments of m1 and m2 
     numSteps += 1
@@ -88,5 +88,5 @@ if __name__ == '__main__':
     n = 100
     a = [random.randint(1, n) for _ in range(1, n + 1)]
     a = [x for x in reversed(range(1, n+ 1))]
-    sortedList, steps = mergesort(a, 0)
+    sortedList, steps = mergeSort(a, 0)
     print(sortedList, steps)

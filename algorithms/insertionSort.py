@@ -1,3 +1,5 @@
+import random
+
 def insertionSort(arr):
     '''
     Sorting algorithm. Time O(n^2) Space O(1)
@@ -36,6 +38,8 @@ def insertionSort(arr):
     return numSteps
 
 if __name__ == '__main__':
-    a = [5,9,1,3,4,6,6,3,2]
+    n = 100
+    a = [random.randint(1, n) for _ in range(1, n + 1)]
+    a = [x for x in range(1, n+ 1)]
     finalSteps = insertionSort(a)
     print(a, ' -> ', finalSteps)
