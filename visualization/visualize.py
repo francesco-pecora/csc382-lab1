@@ -24,40 +24,8 @@ class Visualizer:
             print('C constant: ', float(mergeSteps[i]) / (self.inputs[i] ** 2.0))
             print()
 
-    def exponentialFit(self, x, a, b, c):
-        return a*np.exp(-b*x) + c
-
-    def plotCurves(self, x, y, z, title):
-        '''
-        function that plots the two best fit curves (insertion and merge sort)
-        y -> y values for insertion sort
-        z -> y values for merge sort
-        '''
-        # data spans across this range in the x axis
-        x = np.array([x for x in range(1, len(x) + 1)])
-
-        # parameters for fitting curve with insertion sort data
-        fitting_parameters, _ = optimize.curve_fit(self.exponentialFit, x, y)
-        a, b, c = fitting_parameters
-
-        plt.plot(x, self.exponentialFit(x, a, b, c), '-', label='Insertion Fit')
-
-        # parameters for fitting curve with merge sort data
-        fitting_parameters, _ = optimize.curve_fit(self.exponentialFit, x, z)
-        a, b, c = fitting_parameters
-
-        plt.plot(x, self.exponentialFit(x, a, b, c), '-', label='Merge Fit')
-
-
-        plt.xlabel('Number of Operations')
-        plt.ylabel('CPU Time')
-
-        plt.xticks(x)
-        plt.legend()
-        plt.show()
-
     
-    def pltCurves(self, x, y, z, title):
+    def plotCurves(self, x, y, z, title):
 
         x = [x*100 for x in range(1, len(x) + 1)]
 

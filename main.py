@@ -166,7 +166,7 @@ if __name__ == '__main__':
     print('- SORTED ARRAYS -')
     print()
     visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
-    visualizer.pltCurves(inputs, insertionTimes, mergeTimes, 'SORTED ARRAYS')
+    visualizer.plotCurves(inputs, insertionTimes, mergeTimes, 'SORTED ARRAYS')
 
     print('[STILL RUNNING] wait for the new output...')
     print()
@@ -176,7 +176,7 @@ if __name__ == '__main__':
     print('- REVERSED SORTED ARRAYS -')
     print()
     visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
-    visualizer.pltCurves(inputs, insertionTimes, mergeTimes, 'REVERSED SORTED ARRAYS')
+    visualizer.plotCurves(inputs, insertionTimes, mergeTimes, 'REVERSED SORTED ARRAYS')
 
     print('[STILL RUNNING] wait for the new output...')
     print()
@@ -186,7 +186,7 @@ if __name__ == '__main__':
     print('- RANDOM PERMUTATION ARRAYS -')
     print()
     visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
-    visualizer.pltCurves(inputs, insertionTimes, mergeTimes, 'RANDOM PERMUTATION ARRAYS')
+    visualizer.plotCurves(inputs, insertionTimes, mergeTimes, 'RANDOM PERMUTATION ARRAYS')
 
     print('[STILL RUNNING] wait for the new output...')
     print()
@@ -196,4 +196,4 @@ if __name__ == '__main__':
     print('- 50 RANDOM ARRAYS EACH RUN -')
     print()
     visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
-    visualizer.pltCurves(inputs, insertionTimes, mergeTimes, '50 RANDOM ARRAYS EACH RUN')
+    visualizer.plotCurves(inputs, insertionTimes, mergeTimes, '50 RANDOM ARRAYS EACH RUN')
