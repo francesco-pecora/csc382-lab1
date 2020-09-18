@@ -8,6 +8,12 @@ class Visualizer:
         self.inputs = inputs
 
     def printSingleRunValues(self, insertionTimes, insertionSteps, mergeTimes, mergeSteps):
+        '''
+        function that prints information about each run of the two algorithms
+        insertionTimes -> list of CPU times for insertion sort
+        insertionSteps -> list of operations during insertion sort
+        mergeTimes -> list of CPU times for merge sort
+        '''
         for i in range(len(self.inputs)):
             print('Input Size: ', self.inputs[i])
             print('Insertion CPU Time: ', insertionTimes[i], 'x 10^(-5) seconds')
@@ -20,7 +26,11 @@ class Visualizer:
         return a*np.exp(-b*x) + c
 
     def plotCurves(self, x, y, z):
-
+        '''
+        function that plots the two best fit curves (insertion and merge sort)
+        y -> y values for insertion sort
+        z -> y values for merge sort
+        '''
         # data spans across this range in the x axis
         x = np.array([x for x in range(0, len(x))])
 

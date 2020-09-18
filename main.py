@@ -5,18 +5,34 @@ from visualization.visualize import Visualizer
 import time
 
 def runInsertionSort(arr):
+    '''
+    function that runs and times insertion sort
+    arr -> list of integers
+    return -> time in seconds^(-5), num of operations
+    '''
     startTime = time.perf_counter()
     steps = insertionSort(arr)
     endTime = time.perf_counter()
     return (endTime - startTime) * 1000000, steps
 
 def runMergeSort(arr):
+    '''
+    function that runs and times merge sort
+    arr -> list of integers
+    return -> time in seconds^(-5), num of operations
+    '''
     startTime = time.perf_counter()
     _, steps = mergeSort(arr, 0)
     endTime = time.perf_counter()
     return (endTime - startTime) * 1000000, steps
 
 def runSortedArrays(inputs):
+    '''
+    function that performs multiple runs on both insertion
+    sort and merge sort using sorted arrays as input for the sort
+    inputs -> array of input sizes
+    return -> info about the two algorithm runs (time and steps for each one)
+    '''
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
@@ -39,6 +55,12 @@ def runSortedArrays(inputs):
     return insertionTimes, insertionSteps, mergeTimes, mergeSteps
 
 def runReversedSortedArrays(inputs):
+    '''
+    function that performs multiple runs on both insertion
+    sort and merge sort using reversed sorted arrays as input for the sort
+    inputs -> array of input sizes
+    return -> info about the two algorithm runs (time and steps for each one)
+    '''
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
@@ -61,6 +83,12 @@ def runReversedSortedArrays(inputs):
     return insertionTimes, insertionSteps, mergeTimes, mergeSteps
 
 def runRandomPermutationArrays(inputs):
+    '''
+    function that performs multiple runs on both insertion
+    sort and merge sort using random permutations as input for the sort
+    inputs -> array of input sizes
+    return -> info about the two algorithm runs (time and steps for each one)
+    '''
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
@@ -85,6 +113,7 @@ def runRandomPermutationArrays(inputs):
 
 if __name__ == '__main__':
 
+    # input sizes given in the instructions
     inputs = [100, 200, 300, 400, 500, 1000, 2000, 4000, 10000]
     print()
 
