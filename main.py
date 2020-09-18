@@ -4,6 +4,7 @@ from algorithms.insertionSort import insertionSort
 from visualization.visualize import Visualizer
 import time
 
+
 def runInsertionSort(arr):
     '''
     function that runs and times insertion sort
@@ -14,6 +15,7 @@ def runInsertionSort(arr):
     steps = insertionSort(arr)
     endTime = time.perf_counter()
     return (endTime - startTime) * 1000000, steps
+
 
 def runMergeSort(arr):
     '''
@@ -26,6 +28,7 @@ def runMergeSort(arr):
     endTime = time.perf_counter()
     return (endTime - startTime) * 1000000, steps
 
+
 def runSortedArrays(inputs):
     '''
     function that performs multiple runs on both insertion
@@ -36,7 +39,7 @@ def runSortedArrays(inputs):
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
-    mergeSteps = []         # num of operations for insertions sort
+    mergeSteps = []         # num of operations for merge sort
 
     for inputSize in inputs:
         generator = Generator(inputSize)
@@ -53,6 +56,7 @@ def runSortedArrays(inputs):
         mergeSteps.append(mergeStep)
 
     return insertionTimes, insertionSteps, mergeTimes, mergeSteps
+
 
 def runReversedSortedArrays(inputs):
     '''
@@ -64,7 +68,7 @@ def runReversedSortedArrays(inputs):
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
-    mergeSteps = []         # num of operations for insertions sort
+    mergeSteps = []         # num of operations for merge sort
 
     for inputSize in inputs:
         generator = Generator(inputSize)
@@ -81,6 +85,7 @@ def runReversedSortedArrays(inputs):
         mergeSteps.append(mergeStep)
 
     return insertionTimes, insertionSteps, mergeTimes, mergeSteps
+
 
 def runRandomPermutationArrays(inputs):
     '''
@@ -92,7 +97,7 @@ def runRandomPermutationArrays(inputs):
     insertionTimes = []     # cpu time for insertion sort
     insertionSteps = []     # num of operations for insertion sort
     mergeTimes = []         # cpu time for merge sort
-    mergeSteps = []         # num of operations for insertions sort
+    mergeSteps = []         # num of operations for merge sort
 
     for inputSize in inputs:
         generator = Generator(inputSize)
@@ -111,10 +116,46 @@ def runRandomPermutationArrays(inputs):
     return insertionTimes, insertionSteps, mergeTimes, mergeSteps
 
 
+def run50RandomInRangeArrays(inputs):
+    '''
+    function that generates n arrays of n random numbers (n is each entry in inputs)
+    and returns info about the runs in the form of average of the n runs
+    inputs -> list of array sizes
+    return -> average info about the two algorithm runs (time and steps for each one)
+    '''
+    finalInsertionTimes = []     # cpu time for insertion sort
+    finalInsertionSteps = []     # num of operations for insertion sort
+    finalMergeTimes = []         # cpu time for merge sort
+    finalMergeSteps = []         # num of operations for merge sort
+    for inputSize in inputs:
+        insertionTimes = []
+        insertionSteps = []
+        mergeTimes = []
+        mergeSteps = []
+        generator = Generator(inputSize)
+        arrays = generator.generate50RandomInRange()
+        for array in arrays:
+            mergeTime, mergeStep = runMergeSort(array)
+            mergeTimes.append(mergeTime)
+            mergeSteps.append(mergeStep)
+
+            insertionTime, insertionStep = runInsertionSort(array)
+            insertionTimes.append(insertionTime)
+            insertionSteps.append(insertionStep)
+        
+        # appending the average of the n runs in the final result array
+        finalInsertionTimes.append(sum(insertionTimes)/len(insertionTimes))
+        finalInsertionSteps.append(sum(insertionSteps)/len(insertionSteps))
+        finalMergeTimes.append(sum(mergeTimes)/len(mergeTimes))
+        finalMergeSteps.append(sum(mergeSteps)/len(mergeSteps))
+    
+    return finalInsertionTimes, finalInsertionSteps, finalMergeTimes, finalMergeSteps
+
+
 if __name__ == '__main__':
 
     # input sizes given in the instructions
-    inputs = [100, 200, 300, 400, 500, 1000, 2000, 4000, 10000]
+    inputs = [100, 200, 300, 400, 500, 1000, 2000, 4000]
     print()
 
     visualizer = Visualizer(inputs)
@@ -142,6 +183,16 @@ if __name__ == '__main__':
     # running algorithms for the random permutation array inputs
     insertionTimes, insertionSteps, mergeTimes, mergeSteps = runReversedSortedArrays(inputs)
     print('- RANDOM PERMUTATION ARRAYS -')
+    print()
+    visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
+    visualizer.plotCurves(inputs, insertionTimes, mergeTimes)
+
+    print('[STILL RUNNING] wait for the new output...')
+    print()
+
+    # running algorithms for the random permutation array inputs
+    insertionTimes, insertionSteps, mergeTimes, mergeSteps = run50RandomInRangeArrays(inputs)
+    print('- 50 RANDOM ARRAYS EACH RUN -')
     print()
     visualizer.printSingleRunValues(insertionTimes, insertionSteps, mergeTimes, mergeSteps)
     visualizer.plotCurves(inputs, insertionTimes, mergeTimes)
