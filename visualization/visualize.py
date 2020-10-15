@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from scipy import optimize
 import numpy as np
+import math
 
 class Visualizer:
 
@@ -21,7 +22,7 @@ class Visualizer:
             print('C constant: ', float(insertionSteps[i]) / (self.inputs[i] ** 2.0))
             print('Merge CPU Time: ', mergeTimes[i], 'x 10^(-2) seconds')
             print('Merge Steps: ', mergeSteps[i])
-            print('C constant: ', float(mergeSteps[i]) / (self.inputs[i] ** 2.0))
+            print('C constant: ', float(mergeSteps[i]) / (self.inputs[i] * math.log2(self.inputs[i])))
             print()
 
     
