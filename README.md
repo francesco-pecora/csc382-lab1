@@ -61,7 +61,7 @@ C constant:  0.28151469183993727</br>
 </br>
 </br>
 
-Input Size:  100</br>0
+Input Size:  1000</br>
 Insertion CPU Time:  0.05453 x 10^(-2) seconds</br>
 Insertion Steps:  4996</br>
 C constant:  0.004996
@@ -72,7 +72,7 @@ C constant:  0.25206244970264025</br>
 </br>
 </br>
 
-Input Size:  400</br>0
+Input Size:  4000</br>
 Insertion CPU Time:  0.23174 x 10^(-2) seconds</br>
 Insertion Steps:  19996</br>
 C constant:  0.00124975
@@ -83,7 +83,7 @@ C constant:  0.20917976962098347</br>
 </br>
 </br>
 
-Input Size:  100</br>00
+Input Size:  10000</br>
 Insertion CPU Time:  0.58435 x 10^(-2) seconds</br>
 Insertion Steps:  49996</br>
 C constant:  0.00049996
@@ -153,7 +153,7 @@ C constant:  0.28129162156114174</br>
 </br>
 </br>
 
-Input Size:  100</br>0
+Input Size:  1000</br>
 Insertion CPU Time:  25.0188 x 10^(-2) seconds</br>
 Insertion Steps:  2002996</br>
 C constant:  2.002996
@@ -164,7 +164,7 @@ C constant:  0.2519621063707522</br>
 </br>
 </br>
 
-Input Size:  400</br>0
+Input Size:  4000</br>
 Insertion CPU Time:  264.46172 x 10^(-2) seconds</br>
 Insertion Steps:  32011996</br>
 C constant:  2.00074975
@@ -175,7 +175,7 @@ C constant:  0.20915887671550795</br>
 </br>
 </br>
 
-Input Size:  100</br>00
+Input Size:  10000</br>
 Insertion CPU Time:  1317.39392 x 10^(-2) seconds</br>
 Insertion Steps:  200029996</br>
 C constant:  2.00029996
@@ -245,7 +245,7 @@ C constant:  0.28129162156114174</br>
 </br>
 </br>
 
-Input Size:  100</br>0
+Input Size:  1000</br>
 Insertion CPU Time:  13.939 x 10^(-2) seconds</br>
 Insertion Steps:  2002996</br>
 C constant:  2.002996
@@ -256,7 +256,7 @@ C constant:  0.2519621063707522</br>
 </br>
 </br>
 
-Input Size:  400</br>0
+Input Size:  4000</br>
 Insertion CPU Time:  209.91071 x 10^(-2) seconds</br>
 Insertion Steps:  32011996</br>
 C constant:  2.00074975
@@ -267,7 +267,7 @@ C constant:  0.20915887671550795</br>
 </br>
 </br>
 
-Input Size:  100</br>00
+Input Size:  10000</br>
 Insertion CPU Time:  1300.83443 x 10^(-2) seconds</br>
 Insertion Steps:  200029996</br>
 C constant:  2.00029996
@@ -337,7 +337,7 @@ C constant:  0.5578452304006668</br>
 </br>
 </br>
 
-Input Size:  100</br>0
+Input Size:  1000</br>
 Insertion CPU Time:  6.299351799999999 x 10^(-2) seconds</br>
 Insertion Steps:  1003852.4</br>
 C constant:  1.0038524
@@ -348,7 +348,7 @@ C constant:  0.5019594903031376</br>
 </br>
 </br>
 
-Input Size:  400</br>0
+Input Size:  4000</br>
 Insertion CPU Time:  104.4353062 x 10^(-2) seconds</br>
 Insertion Steps:  16011686.0</br>
 C constant:  1.000730375
@@ -359,7 +359,7 @@ C constant:  0.4178664666727445</br>
 </br>
 </br>
 
-Input Size:  100</br>00
+Input Size:  10000</br>
 Insertion CPU Time:  665.4609301999999 x 10^(-2) seconds</br>
 Insertion Steps:  100163397.36</br>
 C constant:  1.0016339736
